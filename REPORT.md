@@ -23,12 +23,12 @@ My implementation uses to following hyperparameter values:
 
 ## The neural network models
 
-Each player is a DDPG agent, which has an Actor and a Critic, and both the actor and critic have a "local" and a "target" neural network.
+Each player is a DDPG agent, which has an actor and a critic, and both the actor and critic have a "local" and a "target" neural network.
 
 
-The actor networks are a typical neural network consisting each of three fully connected layers. They have 48 input nodes (two times the state size, 24, for each player) and two output nodes (the action size of a player). The two hidden layers have 256 and 128 nodes, respectively, and a ReLU activation function. The output layer has a tanh function so that the output range is [-1, +1].
+The actor networks are a typical neural network consisting each of three fully connected layers. The network has 48 input nodes (two times the state size, 24, for each player) and two output nodes (the action size of a player). The two hidden layers have 256 and 128 nodes, respectively, and a ReLU activation function. The output layer has a tanh function so that the output range is [-1, +1].
 
-The Critic networks are a classic neural network consisting each of three fully connected layers. The two hidden layers have a ReLU activation function. The first layer has 48 input nodes (two times the state size, 24, for each player) and 256 hidden nodes. The output of the this layer is then concatenated with the actions of each player. So the input to the second layers has 260 nodes: 256 from the first layer input and two each for the player actions. The second layers has 128 hidden nodes. The output layer has one output.
+The critic networks are also a typical neural network consisting each of three fully connected layers. The two hidden layers have a ReLU activation function. The first layer has 48 input nodes (two times the state size, 24, for each player) and 256 hidden nodes. The output of the this layer is then concatenated with the actions of each player. As a result, the input to the second layers has 260 nodes: 256 from the first layer input and two each for the player actions. The second layers has 128 hidden nodes. Finally, the output layer has one output.
 
 The weights of the target networks are updated using soft updated from the local networks.
 
@@ -36,11 +36,11 @@ The weights of the target networks are updated using soft updated from the local
 
 I ran several experiments with the models, to see the impact of different hyperparameter values. Most experiments showed little or no learning, and were aborted before the target score was reached.
 
-Below is the learning curve for the hyperparameters shown above. The MADDPG algorithm ran for 3000 episodes, taking 10+ hours on my iMac (CPU only). The environment was solved in 843 episodes. The score kept improving and peaked at about 1850 episodes.
+Below is the learning curve for the hyperparameters shown above. The MADDPG algorithm ran for 1500 episodes. The environment was solved in about 1350 episodes.
 
 ![Learning Curve][image1]
 
-The curve below shows the scores and moving average for a much longer run (3000 steps). Unfortunately the way I calculate the score may not have been correct. However, the chart shows how the model performance goes up and down.
+The curve below shows the score trend for a much longer run (3000 steps). The values shown on the chart are double what they should be (my code still had a little bug). Nevertheless, the chart shows how the model performance goes up and down as the model is trained with 3000 episodes.
 
 ![Learning Curve][image2]
 

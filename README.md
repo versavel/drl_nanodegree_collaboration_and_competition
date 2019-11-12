@@ -9,7 +9,7 @@
 
 ## Introduction
 
-This project uses the Unity [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment, in which two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1.  If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01.  Thus, the goal of each agent is to keep the ball in play. My [report](https://github.com/versavel/p3_collab-compet_MADDPG/blob/master/report.md) provides more information about my implentation.
+This project uses the Unity [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment, in which two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1.  If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01.  Thus, the goal of each agent is to keep the ball in play. My [report](https://github.com/versavel/drl_nanodegree_collaboration_and_competition/blob/master/REPORT.md) provides more information about my implentation.
 
 
 ![Trained Agent][image1]
@@ -77,5 +77,5 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 ## Instructions
 
-* To train the agent: execute the [Train_Agent.ipynb](https://github.com/versavel/drl_nanodegree_continuous_control_project/blob/master/Train_Agent.ipynb) notebook
-* To watch the trained agent: execute the [Watch_Agent.ipnb](https://github.com/versavel/drl_nanodegree_continuous_control_project/blob/master/Watch_Agent.ipynb) notebook
+* To train the agent: execute the [Train_Agent.ipynb](https://github.com/versavel/drl_nanodegree_collaboration_and_competition/blob/master/Train_Agent.ipynb) notebook
+* To watch the trained agent: execute the [Watch_Agent.ipnb](https://github.com/versavel/drl_nanodegree_collaboration_and_competition/blob/master/Watch_Agent.ipynb) notebook
