@@ -1,8 +1,8 @@
 [//]: # (Image References)
 
 [image1]: learning_curve.jpg "Learning Curve"
-[image2]: learning_curve2.jpg "Learning Curve #2"
-[image3]: learning_curve3.jpg "Learning Curve for training with Single Agent"
+[image2]: learning_curve_3000episodes.jpg "Learning Curve 3000 episodes"
+
 
 # Project 3: Collaboration and Competition
 
@@ -40,15 +40,13 @@ Below is the learning curve for the hyperparameters shown above. The MADDPG algo
 
 ![Learning Curve][image1]
 
-When the actor's number of hidden nodes was doubled to 512 and 256, the model solved the environment faster, as shown in the figure below.
+The curve below shows the scores and moving average for a much longer run (3000 steps). Unfortunately the way I calculate the score may not have been correct. However, the chart shows how the model performance goes up and down.
 
 ![Learning Curve][image2]
 
 
-![Learning Curve][image3]
-
 ## Further Improvements
 
-Algorithmic wise, the authors of the [MA-DDPG](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf) believe the performance of MA-DDPG could be further improved by training with an ensamble of policies.
+Algorithmic-wise, the [MA-DDPG](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf) authors believe the performance of MA-DDPG could be further improved by training with an ensemble of policies.
 
-Coding-wise, it would be great to improve the generation of pseudo random numbers . Although I set the seed for the pseudo random generator (PRG) to a fixed value, the computed scores change, and they shouldn't. This makes it impossible to make reproducible experiments.
+Coding-wise, it would be great to improve the generation of pseudo random numbers . Although I set the seed for the pseudo random generator (PRG) to a fixed value, somehow the computed scores change, and they shouldn't. I must not be doing it right. This makes it impossible to make reproducible experiments.
